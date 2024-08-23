@@ -2,7 +2,15 @@
 
 /* 共通部分
 ------------------------------- */
-html {
+body {
+    background-image: url('path/to/your/image.jpg');
+    background-attachment: fixed;
+    background-size: cover; /* 画像が画面全体にフィットするようにする */
+    background-position: center; /* 画像を中央に配置する */
+}
+
+  
+  html {
     font-size: 100%;
     font-family: "DotGothic16", sans-serif;
     font-weight: 23;
@@ -32,27 +40,7 @@ a{
     line-height: 1.4;
     
 }
-/*ローディング画面のためのcss*/
-#splash {
-    /*fixedで前面に固定*/
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background: #333;
-    text-align: center;
-    color: #fff;
-}
-/*Loadingバー中央配置*/
-#splash_text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 999;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-}
+
 /*ヘッダー------------------------*/
 .page-header {
     padding-top: 3rem;
@@ -60,22 +48,8 @@ a{
 .logo {
     width: 210px;
 }
-/*Playlist
--------------------------------*/
-.grid {
-    display: grid;
-    gap: 3rem 2rem;
-    grid-template-columns: repeat(3,1fr);
-    text-align: center;
-}
-.item-img {
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 16px;
-}
-.item p {
-    font-size: .875rem;
-}
+
+
 
 /* ボタン */
 
@@ -116,14 +90,25 @@ a{
     background-position: center bottom;
     height: 100vh;
 }
-/* HOME
--------------------------- */
-.cover-home {
-    background-image: url(../images/a723406a55264a14beb90537c6691c6b.jpg);
+
+/*me
+---------------------------*/
+.cover-me {
+    background-image: url(../images/a890a83c-3700-4f85-8c6a-59b3ef229b01.jfif);
     background-position: center 45%;
     background-size: cover;
 }
 
+  
+
+img {
+    width: 400px;
+    height: auto;
+    text-align: center;
+    
+}
+
+  
 
 
 

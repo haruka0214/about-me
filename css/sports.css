@@ -32,27 +32,6 @@ a{
     line-height: 1.4;
     
 }
-/*ローディング画面のためのcss*/
-#splash {
-    /*fixedで前面に固定*/
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    background: #333;
-    text-align: center;
-    color: #fff;
-}
-/*Loadingバー中央配置*/
-#splash_text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 999;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-}
 /*ヘッダー------------------------*/
 .page-header {
     padding-top: 3rem;
@@ -127,6 +106,13 @@ a{
 
 
 
+/*sports
+-----------------------*/
+.cover-sports {
+    background-image: url(../images/3fe9e5bf591b8f495123be3f0f7bbac8.jpg);
+    background-position: center 45%;
+    background-size: cover;
+}
 
 
 
