@@ -94,7 +94,7 @@ a{
 /*me
 ---------------------------*/
 .cover-me {
-    background-image: url(../images/a890a83c-3700-4f85-8c6a-59b3ef229b01.jfif);
+    background-image: url(../images/IMG_4740.JPG);
     background-position: center 45%;
     background-size: cover;
 }
@@ -105,8 +105,13 @@ img {
     width: 400px;
     height: auto;
     text-align: center;
-    
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
 }
+
+
+
+
 
   
 
