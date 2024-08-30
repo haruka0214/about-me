@@ -255,6 +255,36 @@ html, body {
     }
 }
 
+/* 星のフィールドを定義 */
+.starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* デフォルトで操作を無効にする */
+}
+
+/* 星の要素を定義 */
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: #FFD700;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 
+        21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+    opacity: 0.8;
+    pointer-events: none; /* デフォルトで操作を無効にする */
+}
+
+/* モバイルサイズ用のスタイル */
+@media (max-width: 768px) {
+    .starfield {
+        pointer-events: none; /* モバイルサイズで星の操作を無効にする */
+    }
+}
 
 
 
