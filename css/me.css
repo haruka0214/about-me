@@ -98,12 +98,14 @@ a {
 }
 
 /* 画像 */
-img-container {
-    display: flex; /* フレックスボックスで横並びにする */
-    justify-content: center; /* コンテンツを中央揃え */
-    gap: 1rem; /* 画像間のスペースを設定 */
-    flex-wrap: wrap; /* 必要に応じて画像が折り返す */
-    margin: 2rem 0; /* 上下のマージンを設定 */
+img {
+    width: 80%; /* 基本の幅を80%に設定 */
+    max-width: 400px; /* 最大幅を400pxに設定 */
+    height: auto;
+    text-align: center;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    display: block; /* 画像をブロック要素にして中央揃え */
 }
 
 /* 星 */
@@ -184,19 +186,17 @@ body {
     overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
-
-
-@media (max-width: 768px) { /* 画面幅が768px以下のとき */
-    .page-title {
-        font-size: 2.5rem; /* タイトルのフォントサイズを小さくする */
-        margin-top: 1rem; /* マージンを少し縮める */
-    }
-
+/* メディアクエリ */
+@media (min-width: 1024px) { /* デスクトップサイズ */
     img {
-        width: 350px; /* 画像の幅を小さくする */
-        margin-bottom: 1rem; /* 画像の下のマージンを調整 */
-    }
+        
+        max-width: 300px; /* 最大幅を300pxに設定 */
+        display: block;
 }
+}
+
+
+
 
 @media (max-width: 480px) { /* 画面幅が480px以下のとき */
     .page-title {
@@ -204,25 +204,7 @@ body {
     }
 
     img {
-        width: 250px; /* 画像の幅をさらに小さくする */
+        width: 200px; /* 画像の幅をさらに小さくする */
         margin-bottom: 0.5rem; /* 画像の下のマージンを調整 */
     }
 }
-/* モバイルサイズで画像を中央に配置 */
-@media (max-width: 768px) {
-    body {
-        overflow: hidden; /* モバイルサイズでのスクロールを防ぐ */
-    }
-
-    .img-container {
-        display:   flex; /* フレックスボックスで配置 */
-        justify-content: center; /* 横方向の中央に配置 */
-        align-items: center; /* 縦方向の中央に配置 */
-        flex-direction: column; /* 画像を縦方向に並べる */
-        gap: 1rem; /* 画像間のスペースを設定 */
-        margin: 0 auto; /* コンテナの中央揃え */
-    }
-
-   
-}
-
