@@ -168,6 +168,12 @@ img {
         width: 200px; /* スマートフォンなど小さい画面では画像のサイズを調整 */
     }
 }
+
+@media (max-width: 768px){
+    .grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
 .cover-live {
     background-image: url(../images/7fc651367e8113caf85b422fedf14797.jpg);
     background-position: center 45%;
@@ -228,8 +234,6 @@ html, body {
     overflow-x: hidden; /* 横スクロールを防ぐ */
     overflow-y: auto;   /* 縦スクロールを許可 */
 }
-
-
 
 
 
