@@ -5,10 +5,15 @@
 html {
     font-size: 100%;
     font-family: "DotGothic16", sans-serif;
-    font-weight: 23;
+    font-weight: 400; /* 標準的なフォントウェイト */
     font-style: normal;
-    color: #d12c2c;
-    text-decoration: none;
+    color: #ff00d4; /* テキストの色 */
+    text-decoration: none; /* テキストの装飾なし */
+    text-shadow: 
+        0 0 5px #ffffff, /* 赤いグロー効果 */
+        0 0 10px #c45cee,
+        0 0 15px #e357f0,
+        0 0 20px #a46be6; /* 明るさや範囲を調整 */
 }
 /* 見出し */
 a{
@@ -39,43 +44,14 @@ a{
 .logo {
     width: 210px;
 }
-/*Playlist
--------------------------------*/
-.grid {
-    display: grid;
-    gap: 3rem 2rem;
-    grid-template-columns: repeat(3,1fr);
-    text-align: center;
-}
-.item-img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 16px;
-}
-.item p {
-    font-size: .875rem;
-}
-.image-container {
-    width: 300px; 
-    height: 200px; 
-    overflow: hidden; 
-}
-
-.image-container img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
 /* ボタン */
 
 .btn-menu {
     position: absolute;
     top: 12px;
     right: 12px;
-    border: 1px solid rgba(255, 255, 255,.5);
-    background-color: rgb(197, 202, 202);
+    border: 1px solid rgba(212, 0, 255, 0.5);
+    background-color: rgb(255, 255, 255);
     color: var(--white);
     padding: .5rem 1rem;
 }
@@ -141,4 +117,123 @@ a{
     width: 100%;
     height: auto;
 }
+/*星*/
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* 星がクリックされないようにする */
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: #c300ff;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 
+        21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+    /*Playlist
+-------------------------------*/
+
+img {
+    width: 300px; /* 幅を100ピクセルに設定 */
+    height: auto; /* 高さは自動で調整 */
+  }
+  
+  /* 画像の幅を親要素の幅に合わせる */
+  img {
+    max-width: 100%; /* 親要素の幅に合わせて最大幅を設定 */
+    height: auto; /* 高さは自動で調整 */
+  }
+
+  
+  @media (max-width: 768px) {
+    .overlay-image img {
+        width: 200px; /* スマートフォンなど小さい画面では画像のサイズを調整 */
+    }
+}
+.cover-live {
+    background-image: url(../images/7fc651367e8113caf85b422fedf14797.jpg);
+    background-position: center 45%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: auto; /* 高さを自動調整 */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* メニューの基本設定 */
+.main-nav {
+    background: var(--gray);
+    width: 0%;
+    position: fixed;
+    z-index: 2;
+    top: 50px;
+    right: 0;
+    overflow: auto; /* スクロールを許可 */
+    transition: .5s;
+    height: 100%; /* メニューの高さを画面全体に合わせる */
+}
+
+/* メニューが開いたときの設定 */
+.main-nav.open-menu {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75); /* メニューが開いているときの背景色 */
+    z-index: 1001; /* タイトルよりも前面に表示するための値 */
+}
+
+/* メニュー内のリンクの設定 */
+.main-nav li {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* メニューボタンの設定 */
+.btn-menu {
+    position: fixed; /* スクロールに影響されないように固定する */
+    top: 12px; /* 画面上部からの距離 */
+    right: 12px; /* 画面右端からの距離 */
+    border: 1px solid rgba(212, 0, 255, 0.5);
+    background-color: rgb(85, 31, 90);
+    color: #ffffff;
+    padding: .5rem 1rem;
+    z-index: 3; /* メニューよりも前面に表示 */
+}
+
+/* スクロール用のスタイル */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto; /* 高さを自動調整 */
+    overflow-x: hidden; /* 横スクロールを防ぐ */
+    overflow-y: auto;   /* 縦スクロールを許可 */
+}
+
+
+
+
+
+
+
+
 

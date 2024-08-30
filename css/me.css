@@ -2,22 +2,20 @@
 
 /* 共通部分
 ------------------------------- */
-body {
-    background-image: url('path/to/your/image.jpg');
-    background-attachment: fixed;
-    background-size: cover; /* 画像が画面全体にフィットするようにする */
-    background-position: center; /* 画像を中央に配置する */
-}
-
-  
-  html {
+html {
     font-size: 100%;
     font-family: "DotGothic16", sans-serif;
-    font-weight: 23;
+    font-weight: 400; /* 標準的なフォントウェイト */
     font-style: normal;
-    color: #d12c2c;
-    text-decoration: none;
+    color: #2c10ca; /* テキストの色 */
+    text-decoration: none; /* テキストの装飾なし */
+    text-shadow: 
+        0 0 5px #ffffff, /* 赤いグロー効果 */
+        0 0 10px #ddd2d2,
+        0 0 15px #dfbc8e,
+        0 0 20px #e4ad80; /* 明るさや範囲を調整 */
 }
+
 /* 見出し */
 a{
     font-family: "DotGothic16", sans-serif;
@@ -57,8 +55,8 @@ a{
     position: absolute;
     top: 12px;
     right: 12px;
-    border: 1px solid rgba(255, 255, 255,.5);
-    background-color: rgb(197, 202, 202);
+    border: 1px solid rgb(241, 100, 6);
+    background-color: rgb(240, 239, 245);
     color: var(--white);
     padding: .5rem 1rem;
 }
@@ -74,7 +72,7 @@ a{
 }
 .main-nav.open-menu {
     width: 100%;
-    background-color : rgba(224, 224, 224, 0.75);
+    background-color : rgba(255, 255, 255, 0.75);
 }
 .main-nav li {
     text-align: center;
@@ -95,11 +93,19 @@ a{
 ---------------------------*/
 .cover-me {
     background-image: url(../images/IMG_4740.JPG);
-    background-position: center 45%;
-    background-size: cover;
+    background-position: center 45%; /* 画像の位置を中央に少し下 */
+    background-size: cover; /* 背景画像を画面全体に広げる */
+    background-attachment: fixed; /* スクロールしても画像が固定される */
+    background-repeat: no-repeat; /* 画像の繰り返しを防ぐ */
+    position: fixed; /* 画面に固定 */
+    top: 0; /* 画面上部に配置 */
+    left: 0; /* 画面左端に配置 */
+    width: 100vw; /* 画面全体の幅 */
+    height: 100vh; /* 画面全体の高さ */
+    z-index: -1; /* コンテンツより後ろに配置 */
+    
 }
 
-  
 
 img {
     width: 400px;
@@ -107,7 +113,89 @@ img {
     text-align: center;
     border-radius: 16px;
     margin-bottom: 1.5rem;
+    
+    display: block; /* 画像をブロック要素にして中央揃え */
 }
+/*星*/
+.starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* 星がクリックされないようにする */
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: #FFD700;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 
+        21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+    opacity: 0.8;
+    pointer-events: none;
+   
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+/* 背景画像 */
+.cover {
+    position: relative; /* 相対位置で配置するため */
+    background-image: url(../images/IMG_4740.JPG);
+    background-position: center; /* 背景画像の位置を中央に設定 */
+    background-size: cover; /* 背景画像をカバーするようにサイズを調整 */
+    background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+    height: 100vh; /* ビューポートの高さに合わせる */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* 横方向の中央に配置 */
+    align-items: center; /* 縦方向の中央に配置 */
+}
+
+/* 背景の上に配置する画像 */
+.overlay-image {
+    z-index: 10; /* 背景画像の上に配置 */
+}
+.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* テキストを中央揃え */
+}
+
+/* 背景画像 */
+.cover-me {
+    background-image: url(../images/IMG_4740.JPG);
+    background-position: center 45%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* コンテンツより後ろに配置 */
+}
+
+/* 背景がスクロールしても見えないようにする */
+body {
+    margin: 0;
+    overflow-x: hidden; /* 横スクロールを防ぐ */
+}
+
+
+
 
 
 

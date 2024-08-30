@@ -7,13 +7,13 @@ html {
     font-family: "DotGothic16", sans-serif;
     font-weight: 400; /* 標準的なフォントウェイト */
     font-style: normal;
-    color: #ff00d4; /* テキストの色 */
+    color: #ffffff; /* テキストの色 */
     text-decoration: none; /* テキストの装飾なし */
     text-shadow: 
-        0 0 5px #ffffff, /* 赤いグロー効果 */
-        0 0 10px #c45cee,
-        0 0 15px #e357f0,
-        0 0 20px #ff0000; /* 明るさや範囲を調整 */
+        0 0 5px #00ff15, /* 赤いグロー効果 */
+        0 0 10px #267938,
+        0 0 15px #097030,
+        0 0 20px #003b0a; /* 明るさや範囲を調整 */
 }
 
 /* 見出し */
@@ -21,8 +21,9 @@ a{
     font-family: "DotGothic16", sans-serif;
     font-weight: 200;
     font-style: normal;
-    color: #190be6;
+    color: #0d084d;
     text-decoration: none;
+
     display: flex;
     justify-content: center;
     gap: 2.5rem;
@@ -44,13 +45,16 @@ a{
 .logo {
     width: 210px;
 }
+
+
 /* ボタン */
+
 .btn-menu {
     position: absolute;
     top: 12px;
     right: 12px;
-    border: 1px solid rgb(255, 0, 255);
-    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(1, 58, 13);
+    background-color: rgb(11, 70, 31);
     color: var(--white);
     padding: .5rem 1rem;
 }
@@ -82,10 +86,12 @@ a{
     background-position: center bottom;
     height: 100vh;
 }
-/* HOME
--------------------------- */
-.cover-home {
-    background-image: url(../images/a723406a55264a14beb90537c6691c6b.jpg);
+
+
+/*LIKE
+-----------------------*/
+.cover-like {
+    background-image: url(../images/IMG_4758.JPG);
     background-position: center 45%;
     background-size: cover;
 }
@@ -103,15 +109,16 @@ a{
 .star {
     position: absolute;
     border-radius: 50%;
-    background: #FFD700;
+    background: #023513;
     clip-path: polygon(
         50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 
         21% 91%, 32% 57%, 2% 35%, 39% 35%
     );
-    opacity: 0.5;
+    opacity: 0.8;
     pointer-events: none;
    
 }
+
 
 @keyframes fall {
     from {
@@ -121,37 +128,26 @@ a{
         transform: translateY(100vh);
     }
 }
-.cover-home {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 横方向の中央揃え */
-    justify-content: center; /* 縦方向の中央揃え */
-    height: 100vh; /* ビューポートの高さを100%に設定 */
-    text-align: center; /* テキストの中央揃え */
+/* 背景画像 */
+.cover {
+    position: relative; /* 相対位置で配置するため */
+    background-image: url(../images/IMG_4758.JPG);
+    background-position: center; /* 背景画像の位置を中央に設定 */
+    background-size: cover; /* 背景画像をカバーするようにサイズを調整 */
+    background-repeat: no-repeat; /* 背景画像の繰り返しを無効にする */
+    height: 100vh; /* ビューポートの高さに合わせる */
+    display: flex; /* フレックスボックスレイアウトを使用 */
+    justify-content: center; /* 横方向の中央に配置 */
+    align-items: center; /* 縦方向の中央に配置 */
 }
 
-.btn2 {
-    display: inline-block;
-    font-size: 1.5rem;
-    background-color: rgb(255, 255, 255);
-    color: #ff00bf;
-    border-radius: 8px;
-    padding: .75rem 1.5rem;
-    transition: .5s;
-    text-decoration: none; /* リンクの下線を消す */
-    margin: 1rem 0; /* ボタンの上下にスペースを追加 */
+/* 背景の上に配置する画像 */
+.overlay-image {
+    z-index: 10; /* 背景画像の上に配置 */
 }
 
-.btn2:hover {
-    background-color: #fffc2d;
-    color: #ff00bf; /* ホバー時のテキスト色 */
+.overlay-image img {
+    width: 300px; /* 画像の幅を指定 */
+    height: auto; /* 高さを自動で調整 */
 }
-
-
-
-
-
-
-
-
 
