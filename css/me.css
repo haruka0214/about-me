@@ -194,6 +194,33 @@ body {
     overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
+@media (max-width: 768px) { /* 画面幅が768px以下のとき */
+    .page-title {
+        font-size: 2.5rem; /* タイトルのフォントサイズを小さくする */
+        margin-top: 1rem; /* マージンを少し縮める */
+    }
+    
+    img {
+        width: 350px; /* 画像の幅を小さくする */
+        margin-bottom: 1rem; /* 画像の下のマージンを調整 */
+    }
+}
+
+@media (max-width: 480px) { /* 画面幅が480px以下のとき */
+    .page-title {
+        margin-top: 0.5rem; /* マージンをさらに縮める */
+    }
+    
+    img {
+        width: 250px; /* 画像の幅をさらに小さくする */
+        margin-bottom: 0.5rem; /* 画像の下のマージンを調整 */
+    }
+}
+@media (max-width: 768px) {
+    body {
+        overflow: hidden; /* モバイルサイズでのスクロールを防ぐ */
+    }
+}
 
 
 

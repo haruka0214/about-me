@@ -147,6 +147,11 @@ a{
     color: #ff00bf; /* ホバー時のテキスト色 */
 }
 
+@media (max-width: 768px) {
+    body {
+        overflow: hidden; /* モバイルサイズでのスクロールを防ぐ */
+    }
+}
 
 
 

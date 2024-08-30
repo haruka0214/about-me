@@ -235,6 +235,11 @@ html, body {
     overflow-y: auto;   /* 縦スクロールを許可 */
 }
 
+@media (max-width: 768px) {
+    body {
+        overflow: hidden; /* モバイルサイズでのスクロールを防ぐ */
+    }
+}
 
 
 

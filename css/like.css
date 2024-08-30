@@ -184,5 +184,10 @@ a{
         height: auto; /* 高さは自動で調整 */
     }
 }
+@media (max-width: 768px) {
+    body {
+        overflow: hidden; /* モバイルサイズでのスクロールを防ぐ */
+    }
+}
 
 
